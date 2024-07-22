@@ -14,10 +14,11 @@ import {
 
 
 function App() {
+  
   const[mode,setmode]=useState('light');
   const[alert,setalert]=useState(null);
   const toggle=()=>{
-    if(mode==='dark'){
+    if(mode ==='dark'){
       setmode('light')
       document.body.style.backgroundColor='white'
       showalert("Light Mode Activated","success");
@@ -46,12 +47,11 @@ function App() {
     <Alert alert={alert}/>
     <div className='container'>
     <Routes>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/">
-          <Text showalert={showalert} heading="Enter the text Here" mode={mode}/>
-          </Route>
+          <Route path="/about" element={<About />}/>
+            
+      
+          <Route path="/" element={<Text showalert={showalert} heading="Enter the text Here" mode={mode}/>}/>
+          
         </Routes>
     </div>
     </Router>
